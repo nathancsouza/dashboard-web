@@ -59,10 +59,7 @@ export const Profile = styled.div`
 
 export const ProfileContent = styled.aside`
   background: #fff;
-  max-height: 940px;
   padding: 24px 32px;
-  display: flex;
-  flex-direction: column;
 `;
 
 export const AvatarContent = styled.div`
@@ -70,7 +67,6 @@ export const AvatarContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 170px;
 
   img {
     width: 100px;
@@ -79,7 +75,7 @@ export const AvatarContent = styled.div`
   }
 
   strong {
-    margin-top: 16px;
+    padding-top: 16px;
     color: #3a3b3f;
   }
 
@@ -87,7 +83,7 @@ export const AvatarContent = styled.div`
     color: #9ea0a5;
     font-size: 12px;
     margin-top: 4px;
-    margin-bottom: 22px;
+    padding-bottom: 22px;
   }
 
   border-bottom: 1px solid #e6ecf0;
@@ -104,7 +100,7 @@ export const ProfileText = styled.div`
         width: 19px;
       }
       span {
-        margin-left: 8px;
+        padding-left: 8px;
       }
     }
 
@@ -115,7 +111,7 @@ export const ProfileText = styled.div`
   border-bottom: 1px solid #e6ecf0;
 `;
 export const Support = styled.div`
-  height: 400px;
+  height: 355px;
 `;
 
 export const SupportText = styled.div`
@@ -213,9 +209,14 @@ export const RightMain = styled.div`
   }
 `;
 
-export const MainContent = styled.div`
+export const MainContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 800px;
+`;
+
+export const MainContent = styled.div`
   background: #fff;
   border-radius: 10px;
   border: 1px solid #e4e7eb;
@@ -249,7 +250,7 @@ export const MainContent = styled.div`
 
 export const Footer = styled.div`
   max-width: 1600px;
-  margin-top: 250px;
+  margin-bottom: 30px;
 
   p {
     border-top: 1px solid #cccc;

@@ -1,44 +1,132 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align=center>
+<img src="https://res.cloudinary.com/dmcfuvvn2/image/upload/v1599348830/dashboard_gllc6f.png" />
+</h1>
 
-## Available Scripts
+<div align="center">
 
-In the project directory, you can run:
+![BADGE_WEB_REACT] ![BADGE_SERVER_NODEJS] ![BADGE_TYPESCRIPT]
 
-### `yarn start`
+</div>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<h3 align="center">
+  
+**Lint to [API][site]**
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+</h3>
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- Website Links -->
 
-### `yarn build`
+[site]: https://github.com/nathancsouza/dashboard-api
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- Badges -->
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+[BADGE_CLOSED_ISSUES]: https://img.shields.io/github/issues-closed/x0n4d0/ecoleta?color=red
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[BADGE_OPEN_ISSUES]: https://img.shields.io/github/issues/x0n4d0/ecoleta?color=green
 
-### `yarn eject`
+[BADGE_LICENSE]: https://img.shields.io/github/license/x0n4d0/ecoleta
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+[BADGE_NODE_VERSION]: https://img.shields.io/badge/node-12.17.0-green
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[BADGE_NPM_VERSION]: https://img.shields.io/badge/npm-6.14.4-red
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[BADGE_WEB_REACT]: https://img.shields.io/badge/web-react-blue
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+[BADGE_MOBILE_REACT_NATIVE]: https://img.shields.io/badge/mobile-react%20native-blueviolet
 
-## Learn More
+[BADGE_SERVER_NODEJS]: https://img.shields.io/badge/server-nodejs-important
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[BADGE_STARS]: https://img.shields.io/github/stars/x0n4d0/ecoleta?style=social
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[BADGE_FORKS]: https://img.shields.io/github/forks/x0n4d0/ecoleta?style=social
+
+[BADGE_TYPESCRIPT]: https://badges.frapsoft.com/typescript/code/typescript.png?v=101
+
+[BADGE_OPEN_SOURCE]: https://badges.frapsoft.com/os/v1/open-source.png?v=103
+
+<!-- Techs -->
+
+[react]: https://reactjs.org/
+
+[typescript]: https://www.typescriptlang.org/
+
+[node]: https://nodejs.org/en/
+
+[leaflet]: https://react-leaflet.js.org/en/
+
+[ibge_api]: https://servicodados.ibge.gov.br/api/docs/localidades?versao=1
+
+[ibge_api_ufs]: https://servicodados.ibge.gov.br/api/docs/localidades?versao=1#api-UFs-estadosGet
+
+[ibge_api_municipios]: https://servicodados.ibge.gov.br/api/docs/localidades?versao=1#api-Municipios-estadosUFMunicipiosGet
+
+[vscode]: https://code.visualstudio.com/
+
+[react_native]: http://www.reactnative.com/
+
+[stackedit]: https://stackedit.io
+
+[vscode_sqlite_extension]: https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite
+
+[markdown_emoji]: https://gist.github.com/rxaviers/7360908
+
+[commitlint]: https://github.com/conventional-changelog/commitlint
+
+[express]: https://expressjs.com/
+
+[cors]: https://expressjs.com/en/resources/middleware/cors.html
+
+[knex]: http://knexjs.org/
+
+[sqlite3]: https://github.com/mapbox/node-sqlite3
+
+[tsnode]: https://github.com/TypeStrong/ts-node
+
+[feather_icons]: https://feathericons.com/
+
+[insomnia]: https://insomnia.rest/
+
+[react_leaflet]: https://react-leaflet.js.org/
+
+[react_router_dom]: https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom
+
+[react_icons]: https://react-icons.github.io/react-icons/
+
+[axios]: https://github.com/axios/axios
+
+[dotenv]: https://github.com/motdotla/dotenv
+
+[expo]: https://expo.io/
+
+[expo_google_fonts]: https://github.com/expo/google-fonts
+
+[react_navigation]: https://reactnavigation.org/
+
+[react_native_maps]: https://github.com/react-native-community/react-native-maps
+
+[expo_constants]: https://docs.expo.io/versions/latest/sdk/constants/
+
+[react_native_svg]: https://github.com/react-native-community/react-native-svg
+
+[expo_location]: https://docs.expo.io/versions/latest/sdk/location/
+
+[expo_mail_composer]: https://docs.expo.io/versions/latest/sdk/mail-composer/
+
+[font_roboto]: https://fonts.google.com/specimen/Roboto
+
+[font_ubuntu]: https://fonts.google.com/specimen/Ubuntu
+
+[font_awesome]: https://fontawesome.com/
+
+[multer]: https://github.com/expressjs/multer
+
+[celebrate]: https://github.com/arb/celebrate
+
+[joi]: https://github.com/hapijs/joi
+
+[react_dropzone]: https://github.com/react-dropzone/react-dropzone
+
+[asdf]: https://github.com/asdf-vm/asdf
+
+[yarn]: https://classic.yarnpkg.com/en/docs/install/#debian-stable

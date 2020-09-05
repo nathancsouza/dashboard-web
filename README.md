@@ -10,7 +10,7 @@
 
 <h3 align="center">
   
-**Lint to [API][site]**
+**Link to [API][site]**
 
 </h3>
 

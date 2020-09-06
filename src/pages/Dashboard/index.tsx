@@ -8,7 +8,7 @@ import dashboard from "../../assets/dashboard.svg";
 import usersAvatar from "../../assets/users.svg";
 import support from "../../assets/support.svg";
 import filter from "../../assets/filter.svg";
-import search from "../../assets/search.svg";
+import searchIcon from "../../assets/search.svg";
 
 import {
   Container,
@@ -44,6 +44,7 @@ interface User {
 
 const Dashboard: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     async function loadUsers(): Promise<void> {
@@ -54,6 +55,10 @@ const Dashboard: React.FC = () => {
 
     loadUsers();
   }, []);
+
+  const filteredUser = users.filter((user) =>
+    user.name.toLowerCase().includes(String(search.toLowerCase()))
+  );
 
   return (
     <Container>
@@ -109,8 +114,12 @@ const Dashboard: React.FC = () => {
                 <span>FILTER</span>
               </button>
               <div>
-                <input type="text" placeholder="Search users by name, id" />
-                <img src={search} alt="Search" />
+                <input
+                  type="text"
+                  placeholder="Search users by name, id"
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+                <img src={searchIcon} alt="Search" />
               </div>
             </LeftMain>
             <RightMain>
@@ -139,8 +148,8 @@ const Dashboard: React.FC = () => {
               </header>
 
               <main>
-                {users &&
-                  users.map((user) => (
+                {filteredUser &&
+                  filteredUser.map((user) => (
                     <ul>
                       <li>
                         <Link

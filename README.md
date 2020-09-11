@@ -1,5 +1,7 @@
 <h1 align=center>
-<img src="https://res.cloudinary.com/dmcfuvvn2/image/upload/v1599349358/dashboard_gllc6f.png" />
+<img src="https://res.cloudinary.com/dmcfuvvn2/image/upload/v1599857811/fullpage_gcerdc.png" />
+  
+  <img src="https://res.cloudinary.com/dmcfuvvn2/image/upload/v1599857811/fullpage-responsive_clj3g1.png" />
 </h1>
 
 <div align="center">

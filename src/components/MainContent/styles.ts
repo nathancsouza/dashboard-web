@@ -8,12 +8,22 @@ export const Container = styled.div`
 
   min-width: min(82vw);
 
-  /* FIREFOX */
-  scrollbar-width: none;
+  * {
+    /* FIREFOX */
+    scrollbar-width: none;
 
-  /* GOOGLE CHROME */
-  ::-webkit-scrollbar {
-    display: none;
+    ::-webkit-scrollbar {
+      width: 5px;
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: var(--primary);
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: var(--custom);
+    }
   }
 `;
 

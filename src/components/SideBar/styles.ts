@@ -31,6 +31,14 @@ export const Container = styled.div`
   background: var(--custom);
 
   border-radius: 5px;
+
+  /* FIREFOX */
+  scrollbar-width: none;
+
+  /* GOOGLE CHROME */
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const Topside = styled.div`
@@ -164,15 +172,14 @@ export const ProfileData = styled.div`
   @media (min-width: 1280px) {
     display: flex;
     align-items: center;
-    margin-left: 10px;
 
     > strong {
       display: inline;
       color: var(--white);
       font-size: 10px;
       margin-left: 12px;
-      white-space: nowrap;
     }
+    white-space: nowrap;
   }
 `;
 

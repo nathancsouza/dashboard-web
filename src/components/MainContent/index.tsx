@@ -1,23 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import {
+  List,
+  CellMeasurer,
+  CellMeasurerCache,
+  AutoSizer,
+} from "react-virtualized";
 
 import api from "../../services/api";
-
-import Footer from "../Footer";
-
-import filter from "../../assets/filter.svg";
-import searchIcon from "../../assets/search.svg";
 
 import {
   Container,
   MainPageHeader,
-  LeftMain,
-  RightMain,
-  MainContentWrapper,
+  Search,
   MainContentPage,
+  Header,
+  Main,
 } from "./styles";
 
-interface User {
+import searchIcon from "../../assets/search.svg";
+
+interface Player {
   id: string;
   name: string;
   money: number;
@@ -26,31 +29,36 @@ interface User {
 }
 
 const MainContent: React.FC = () => {
-  const [users, setUsers] = useState<User[]>([]);
+  const cache = useRef(
+    new CellMeasurerCache({
+      fixedWidth: true,
+      defaultHeight: 100,
+    })
+  );
+
+  const [players, setPlayers] = useState<Player[]>([]);
   const [search, setSearch] = useState("");
 
   useEffect(() => {
     async function loadUsers(): Promise<void> {
       const response = await api.get("/users");
 
-      setUsers(response.data);
+      setPlayers(response.data);
     }
 
     loadUsers();
   }, []);
 
-  const filteredUser = users.filter((user) =>
-    user.name.toLowerCase().includes(String(search.toLowerCase()))
+  const filteredUser = players.filter(
+    (player) =>
+      player.name.toLowerCase().includes(String(search.toLowerCase())) ||
+      String(player.id) === String(search)
   );
 
   return (
     <Container>
       <MainPageHeader>
-        <LeftMain>
-          <button type="button">
-            <img src={filter} alt="Filter" />
-            <span>FILTER</span>
-          </button>
+        <Search>
           <div>
             <input
               type="text"
@@ -59,23 +67,16 @@ const MainContent: React.FC = () => {
             />
             <img src={searchIcon} alt="Search" />
           </div>
-        </LeftMain>
-        <RightMain>
-          <button type="button">
-            <span>SHOW USER</span>
-          </button>
-          <button type="button">
-            <span>EDIT USER</span>
-          </button>
-          <button type="button">
-            <span>BAN USER</span>
-          </button>
-        </RightMain>
+          <section>
+            <strong>Accounts:</strong>
+            <span>{players.length}</span>
+          </section>
+        </Search>
       </MainPageHeader>
 
-      <MainContentWrapper>
-        <MainContentPage>
-          <header>
+      <MainContentPage>
+        <Header>
+          <div>
             <ul>
               <li>Name</li>
               <li>User Id</li>
@@ -83,30 +84,62 @@ const MainContent: React.FC = () => {
               <li>E-mail Address</li>
               <li>Account Created</li>
             </ul>
-          </header>
+          </div>
+        </Header>
 
-          <main>
-            {filteredUser &&
-              filteredUser.map((user) => (
-                <ul>
-                  <li>
-                    <Link
-                      to="/"
-                      style={{ textDecoration: "none", color: "#3a3b3f" }}
-                    >
-                      {user.name}
-                    </Link>
-                  </li>
-                  <li>{user.id}</li>
-                  <li>{user.money}</li>
-                  <li>{user.email}</li>
-                  <li>{user.created_at}</li>
-                </ul>
-              ))}
-          </main>
-        </MainContentPage>
-        <Footer />
-      </MainContentWrapper>
+        <Main>
+          <div
+            style={{
+              minHeight: "min(100vh - 208px)",
+            }}
+          >
+            <AutoSizer>
+              {({ width, height }) => (
+                <List
+                  width={width}
+                  height={height}
+                  rowHeight={cache.current.rowHeight}
+                  deferredMeasurementCache={cache.current}
+                  rowCount={filteredUser.length}
+                  rowRenderer={({ key, index, style, parent }) => {
+                    const player = filteredUser[index];
+
+                    return (
+                      <CellMeasurer
+                        cache={cache.current}
+                        parent={parent}
+                        columnIndex={0}
+                        rowIndex={index}
+                        key={key}
+                      >
+                        <ul style={style}>
+                          <li>
+                            <Link
+                              to={`/users/${player.id}`}
+                              style={{
+                                textDecoration: "none",
+                                color: "var(--white)",
+                                fontSize: "12px",
+                              }}
+                              className="link"
+                            >
+                              <span>{player.name}</span>
+                            </Link>
+                          </li>
+                          <li>{player.id}</li>
+                          <li>{player.money}</li>
+                          <li>{player.email}</li>
+                          <li>{player.created_at}</li>
+                        </ul>
+                      </CellMeasurer>
+                    );
+                  }}
+                />
+              )}
+            </AutoSizer>
+          </div>
+        </Main>
+      </MainContentPage>
     </Container>
   );
 };

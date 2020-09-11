@@ -1,77 +1,190 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const Profile = styled.div`
-  width: 270px;
-  color: #66788a;
-`;
+import {
+  Github,
+  Database,
+  Person,
+  Settings,
+  Dashboard,
+} from "../../styles/Icons";
 
-export const ProfileContent = styled.aside`
-  background: #fff;
-  padding: 24px 32px;
-`;
-
-export const AvatarContent = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+
+  min-width: min(12vw);
+
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  padding: 15px 25px 20px 25px;
+
+  height: calc(100vh - 100px);
+  box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.6);
+  margin-top: 80px;
+  margin-left: 20px;
+  overflow-y: auto;
+
+  background: var(--custom);
+
+  border-radius: 5px;
+`;
+
+export const Topside = styled.div`
+  display: flex;
+  flex-direction: column;
   align-items: center;
 
-  img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+  @media (min-width: 1280px) {
+    align-items: flex-start;
   }
-
-  strong {
-    padding-top: 16px;
-    color: #3a3b3f;
-  }
-
-  p {
-    color: #9ea0a5;
-    font-size: 12px;
-    margin-top: 4px;
-    padding-bottom: 22px;
-  }
-
-  border-bottom: 1px solid #e6ecf0;
 `;
 
-export const ProfileText = styled.div`
-  ul {
-    list-style: none;
+export const Title = styled.div`
+  span {
+    display: none;
+  }
 
-    li {
-      display: flex;
-      padding-top: 30px;
-      img {
-        width: 19px;
-      }
-      span {
-        padding-left: 8px;
-      }
+  @media (min-width: 1280px) {
+    width: 100%;
+    text-align: center;
+
+    > div {
+      display: none;
     }
 
-    li:last-child {
-      margin-bottom: 230px;
+    > span {
+      display: inline;
+      color: var(--white);
     }
   }
-  border-bottom: 1px solid #e6ecf0;
-`;
-export const Support = styled.div`
-  height: 355px;
+  border-bottom: 1px solid var(--white);
+  padding-bottom: 10px;
 `;
 
-export const SupportText = styled.div`
-  margin-top: 24px;
-  color: #9ea0a5;
-  font-size: 13px;
-  margin-bottom: 22px;
+export const MenuButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+
+  > span {
+    display: none;
+  }
+
+  @media (min-width: 1280px) {
+    > span {
+      display: inline;
+      font-weight: normal;
+      font-size: 12px;
+      color: var(--white);
+      margin-left: 12px;
+    }
+    padding-right: 15px;
+  }
+
+  margin-top: 16.5px;
+  padding: 8px 0;
+  outline: 0;
+
+  & + button {
+    margin-top: 8px;
+  }
+
+  cursor: pointer;
+  border-radius: 25px;
+
+  &:hover,
+  &.active {
+    span,
+    svg {
+      color: var(--like);
+    }
+  }
 `;
 
-export const SupportContent = styled.div`
-  img {
-    margin-right: 8px;
-    width: 19px;
+const iconCSS = css`
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--white);
+`;
+
+export const DatabaseIcon = styled(Database)`
+  ${iconCSS}
+`;
+
+export const SettingsIcon = styled(Settings)`
+  ${iconCSS}
+`;
+
+export const ProfileIcon = styled(Person)`
+  ${iconCSS}
+`;
+
+export const DashboardIcon = styled(Dashboard)`
+  ${iconCSS}
+`;
+
+export const Botside = styled.div`
+  > strong {
+    display: none;
+  }
+
+  @media (min-width: 1280px) {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+  }
+`;
+
+export const Avatar = styled.div`
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--gray);
+`;
+
+export const ProfileData = styled.div`
+  > strong {
+    display: none;
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+
+  @media (min-width: 1280px) {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+
+    > strong {
+      display: inline;
+      color: var(--white);
+      font-size: 10px;
+      margin-left: 12px;
+      white-space: nowrap;
+    }
+  }
+`;
+
+export const DevIcon = styled(Github)`
+  display: flex;
+  width: 18px;
+  height: 18px;
+  color: var(--white);
+  cursor: pointer;
+  &:hover {
+    > path {
+      color: var(--like);
+    }
   }
 `;
